@@ -118,6 +118,10 @@ namespace SorterLab1
                 MasLength.Focus();
                 return;
             }
+            ResultOfEven.Text = MainWindow.CheckEven(x, y);     
+        }
+        public static string CheckEven(int x, int y)
+        {
             do
             {
                 x--;
@@ -126,9 +130,9 @@ namespace SorterLab1
             while (x > y);
             if (x == y)
             {
-                ResultOfEven.Text = "Чет";
+                return "Чет";
             }
-            else ResultOfEven.Text = "Нечет";
+            else return "Нечет";
         }
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
@@ -147,7 +151,7 @@ namespace SorterLab1
 
         private void AboutProgram_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Разработчик: Лопаткин Сергей ИСП-31 (GitHub.Name= \"Hapro Bishop\")");
+            MessageBox.Show("Разработчик: Лопаткин Сергей ИСП-31 (GitHub.Name= \"Hapro Bishop\")","О программе", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
